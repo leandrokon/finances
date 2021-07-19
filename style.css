@@ -14,6 +14,18 @@ h2 {
     margin: 2rem 0;
 }
 
+/*######--Links and Buttons--######*/
+a {
+    width: fit-content;
+    color: #49ac25;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+}
+a:hover {
+    color: #68bd4a;
+}
+
+
 .container {
     display: flex;
     flex-direction: column;
@@ -27,6 +39,7 @@ header {
     background: #207461;
     padding: 2rem 0;
     text-align: center;
+    margin-bottom: 2rem;
 }
 header #logo {
     color: #d6d6d6;
@@ -34,25 +47,43 @@ header #logo {
 
 /*######--BALANCE--######*/
 
-#balance {
-    display: flex;
-    flex-direction: column;
-    width: 70vw;
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+
 }
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 70vw;
+#balance {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
 }
 .card {
     background: #b2b3b4;
-    width: 50vw;
-    height: 4rem;
+    width: 25vw;
+    height: 4.5rem;
     text-align: center;
     margin-bottom: 0.5rem;
     padding-top: 1rem;
     border-radius: 0.6rem;
+}
+.card h3 {
+    font-weight: normal;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin:0 1rem;
+}
+.card p{
+    font-size: 0.8rem;
 }
 .card.total{
     background: #49ac25;
@@ -73,6 +104,7 @@ header #logo {
     margin: auto;
     width: 80vw;
 }
+
 tbody tr:hover {
     opacity: 0.6;
 }
@@ -103,4 +135,23 @@ footer {
     text-align: center;
     padding: 5rem 0 2rem 0;
     color: #a1a2a3
+}
+
+/*######--Responsive--######*/
+
+@media (max-width: 700px) {
+    #balance {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+    .card {
+        background: #b2b3b4;
+        width: 70vw;
+        height: 4.5rem;
+        text-align: center;
+        margin-bottom: 0.5rem;
+        padding-top: 1rem;
+        border-radius: 0.6rem;
+    }
 }
