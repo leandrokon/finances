@@ -1,5 +1,11 @@
 /*#####--GLOBAL--######*/
 
+:root {
+    --green: #49ac25;
+    --light-green: #7bd15b;
+    --red: #e92929;
+    --light-red: #fc4d4d;
+}
 * {
     margin: 0;
     padding: 0;
@@ -17,14 +23,41 @@ h2 {
 /*######--Links and Buttons--######*/
 a {
     width: fit-content;
-    color: #49ac25;
+    color: var(--green);
     text-decoration: none;
     margin-bottom: 0.5rem;
+    margin: 0;
 }
 a:hover {
-    color: #68bd4a;
+    color: var(--light-green);
 }
-
+button {
+    width: 100%;
+    height: 40px;
+    border: none;
+    color: white;
+    background: var(--green);
+    padding: 0;
+    border-radius: 0.3rem;
+    cursor: pointer;
+}
+button:hover {
+    background: var(--light-green);
+}
+.button.cancel {
+    color: var(--red);
+    border: 2px var(--red) solid;
+    border-radius: 0.3rem;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.5;
+}
+.button.cancel:hover {
+    opacity: 1;
+    background: var(--light-red);
+}
 
 .container {
     display: flex;
@@ -102,7 +135,7 @@ header #logo {
     flex-direction: column;
     border-spacing: 0 0.5rem;
     margin: auto;
-    width: 80vw;
+    overflow-x: auto;
 }
 
 tbody tr:hover {
@@ -130,6 +163,57 @@ td.income {
 td.expense {
     color: #aa0404
 }
+
+/*######--MODAL--######*/
+.modal-overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+}
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+.modal {
+    background-color: #d6d6d6;
+    padding: 2.0rem;
+    width: 60%;
+}
+
+/*######--FORM--######*/
+#form h2 {
+    margin-top: 0;
+}
+input {
+    border: none;
+    border-radius: 0.2rem;
+    padding: 0.8rem;
+    width: 100%;
+}
+.input-group {
+    margin-top: 0.8rem;
+}
+.input-group small {
+    opacity: 0.4;
+}
+.input-group.actions {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.input-group.actions .button,
+.input-group.actions button {
+    
+    width: 20%;
+}
+
 /*######--FOOTER--######*/
 footer {
     text-align: center;
@@ -154,4 +238,13 @@ footer {
         padding-top: 1rem;
         border-radius: 0.6rem;
     }
+    .modal {
+        background-color: #d6d6d6;
+        padding: 2.0rem;
+        width: 90%;
+    }
+    .input-group.actions .button,
+    .input-group.actions button {
+        width: 40%;
+}
 }
