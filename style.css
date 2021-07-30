@@ -1,6 +1,7 @@
 /*#####--GLOBAL--######*/
 
 :root {
+    --dark-blue: #207461;
     --green: #49ac25;
     --light-green: #7bd15b;
     --red: #e92929;
@@ -69,7 +70,7 @@ button:hover {
 
 /*######--HEADER--######*/
 header {
-    background: #207461;
+    background: var(--dark-blue);
     padding: 2rem 0;
     text-align: center;
     margin-bottom: 2rem;
@@ -119,7 +120,11 @@ header #logo {
     font-size: 0.8rem;
 }
 .card.total{
-    background: #49ac25;
+    background: var(--green);
+    color: #bdbebe;
+}
+.card.total.negative{
+    background: var(--red);
     color: #bdbebe;
 }
 #transactions {
