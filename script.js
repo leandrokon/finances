@@ -72,8 +72,14 @@ const Transaction = {
     },
 
     total() {
+        let total = 0
+        total = Transaction.incomes() + Transaction.expenses();
+        total < 0 
+        ? document.querySelector(".card.total").classList.add('negative')
+        : document.querySelector(".card.total").classList.remove('negative')
         
-        return Transaction.incomes() + Transaction.expenses();    
+       
+        return total
     }
 }
 
